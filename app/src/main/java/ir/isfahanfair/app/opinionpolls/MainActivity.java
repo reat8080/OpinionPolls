@@ -9,7 +9,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
             opinionHandler (i);
         }
 
+        database = this.openOrCreateDatabase("opinion", MODE_PRIVATE, null);
+        database.execSQL("CREATE TABLE IF NOT EXISTS results (poll_cat_name VARCHAR,ans1 int(1), ans2 int(1) ," +
+                " ans3 int(1),ans4 int(1),ans5 int(1),ans6 int(1),ans7 int(1),ans8 int(1),ans9 int(1),ans10 int(1),creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
+
         LocalBroadcastManager.getInstance(getApplicationContext())
                 .registerReceiver(mBroadcastReceiver,
                         new IntentFilter(MyService.MY_SERVICE_MESSAGE));
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void opinionHandler (final int i){
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.iphone_unlock);
         String angryId = "quest"+i+"angry";
         int angryID = getResources().getIdentifier(angryId, "id", getPackageName());
         final ImageButton angry = findViewById(angryID) ;
@@ -74,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 happy.setAlpha(0.3f);
                 angry.setAlpha(1f);
                 answers [i] = 1;
+                mp.start();
             }
         });
         soso.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 angry.setAlpha(0.3f);
                 soso.setAlpha(1f);
                 answers [i] = 2;
+                mp.start();
             }
         });
         happy.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 soso.setAlpha(0.3f);
                 happy.setAlpha(1f);
                 answers [i] = 3;
+                mp.start();
             }
         });
     }
@@ -107,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
             String message =
                     intent.getStringExtra(MyService.MY_SERVICE_PAYLOAD);
             Log.i("codejson" , message);
-            Toast.makeText(MainActivity.this, "keke", Toast.LENGTH_SHORT).show();
             //int verificationCode =  getUserCode(message);
         }
     };
@@ -125,13 +134,17 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void submitButtonHandler(View view) {
-        Toast.makeText(this, "نظرات شما با موفقیت ثبت شد. سپاس بابت وقتتان.", Toast.LENGTH_SHORT).show();
-        if (!NetworkHelper.hasNetworkAccess(this)) {
-            storeInDatabase();
+        if (answers[1] == 0) {
+            Toast.makeText(this, "لطفا به سوالات پاسخ دهید.", Toast.LENGTH_SHORT).show();
         } else {
-            storeInServer();
+            Toast.makeText(this, "نظرات شما با موفقیت ثبت شد. سپاس بابت وقتتان.", Toast.LENGTH_SHORT).show();
+            if (!NetworkHelper.hasNetworkAccess(this)) {
+                storeInDatabase();
+            } else {
+                storeInServer();
+            }
+            startActivity(new Intent(this, MainActivity.class));
         }
-        //startActivity(new Intent(this , MainActivity.class));
     }
 
     public void phoneRegisterHandler(View view) {
@@ -187,24 +200,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void storeInServer() {
-//        String registerUrl = "http://admin:1234@comp.isfahanregister.com/app_api/insert?pcn=test" +
-//                "&ansq1=2&ansq2=2&ansq3=3&ansq4=3" +
-//                "&ansq5=3&ansq6=3&ansq7=3&ansq8=3&ansq9=3&ansq10=3";
-//        Intent intent = new Intent(this, MyService.class);
-//        intent.setData(Uri.parse(registerUrl));
-//        startService(intent);
-        String registerUrl = "http://admin:1234@comp.isfahanregister.com/app_api/insert?pcn=test&ansq1=2&ansq2=2&ansq3=3&ansq4=3&ansq5=3&ansq6=3&ansq7=3&ansq8=3&ansq9=3&ansq10=3" ;
-        Intent intent2 = new Intent(this, MyService.class);
-        intent2.setData(Uri.parse(registerUrl));
-        startService(intent2);
-        Toast.makeText(this, "we are here", Toast.LENGTH_SHORT).show();
+
+        Cursor c = database.rawQuery("SELECT * FROM results", null);
+        int pcnIn = c.getColumnIndex("poll_cat_name");
+        int creatIn = c.getColumnIndex("creat");
+        int ansq1In = c.getColumnIndex("ans1");
+        int ansq2In = c.getColumnIndex("ans2");
+        int ansq3In = c.getColumnIndex("ans3");
+        int ansq4In = c.getColumnIndex("ans4");
+        int ansq5In = c.getColumnIndex("ans5");
+        int ansq6In = c.getColumnIndex("ans6");
+        int ansq7In = c.getColumnIndex("ans7");
+        int ansq8In = c.getColumnIndex("ans8");
+        int ansq9In = c.getColumnIndex("ans9");
+        int ansq10In = c.getColumnIndex("ans10");
+
+        c.moveToFirst();
+        int conter = c.getCount();
+
+        if (c.getCount()  == 0){
+
+        } else {
+            while ( conter != 0 ) {
+                String registerUrl = "http://comp.isfahanregister.com/app_api/insert?pcn=" +
+                        c.getString(pcnIn)+"&ansq1="+c.getString(ansq1In)+"&ansq2="+c.getString(ansq2In)+"&ansq3="+c.getString(ansq3In)+
+                        "&ansq4="+c.getString(ansq4In)+"&ansq5="+c.getString(ansq5In)+"&ansq6="+c.getString(ansq6In) +
+                        "&ansq7="+c.getString(ansq7In)+"&ansq8="+c.getString(ansq8In)+"&ansq9="+c.getString(ansq9In)+
+                        "&ansq10="+c.getString(ansq10In)+"creat"+c.getString(creatIn);
+                Intent intent = new Intent(this, MyService.class);
+                intent.setData(Uri.parse(registerUrl));
+                startService(intent);
+                conter--;
+                c.moveToNext();
+            }
+            database.execSQL("DROP TABLE IF EXISTS results");
+        }
+        String registerUrl = "http://comp.isfahanregister.com/app_api/insert?pcn=" +
+                poll_cat_name+"&ansq1="+answers[1]+"&ansq2="+answers[2]+"&ansq3="+answers[3]+"&ansq4="+answers[4]+
+                "&ansq5="+answers[5]+"&ansq6="+answers[6]+"&ansq7="+answers[7]+"&ansq8="+answers[8]+
+                "&ansq9="+answers[9]+"&ansq10="+answers[10]+"creat"+System.currentTimeMillis();
+        Intent intent = new Intent(this, MyService.class);
+        intent.setData(Uri.parse(registerUrl));
+        startService(intent);
 
     }
 
     private void storeInDatabase() {
-        database = this.openOrCreateDatabase("opinion", MODE_PRIVATE, null);
-        database.execSQL("CREATE TABLE IF NOT EXISTS results (poll_cat_name VARCHAR,ans1 int(1), ans2 int(1) ," +
-                " ans3 int(1),ans4 int(1),ans5 int(1),ans6 int(1),ans7 int(1),ans8 int(1),ans9 int(1),ans10 int(1),creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
         ContentValues requestValue = new ContentValues();
         requestValue.put("poll_cat_name" , poll_cat_name);
