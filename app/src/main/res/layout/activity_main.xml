@@ -4,677 +4,672 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ir.isfahanfair.app.opinionpolls.MainActivity"
+    android:background="#e6e6e6"
     android:layoutDirection="rtl"
-    android:background="#e6e6e6">
+    tools:context="ir.isfahanfair.app.opinionpolls.MainActivity">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/scrollView"
-    android:fillViewport="true">
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ir.isfahanfair.app.opinionpolls.MainActivity"
-    android:layoutDirection="rtl"
-    android:background="#e6e6e6">
-
-    <LinearLayout
-        android:id="@+id/questL1"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-
-        <TextView
-            android:id="@+id/questText1"
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="1- تا چه میزان ساعات برگزاری این نمایشگاه را مناسب می دانید؟"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_weight="0.6"
-            android:layout_gravity="center"
-            android:background="#fff"
-            android:textColor="#000"/>
+            android:layout_marginTop="32dp"
+            android:background="#e6e6e6"
+            tools:context="ir.isfahanfair.app.opinionpolls.MainActivity">
 
-        <ImageButton
-            android:id="@+id/quest1angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
+            <LinearLayout
+                android:id="@+id/questL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            app:srcCompat="@drawable/angry" />
 
-        <ImageButton
-            android:id="@+id/quest1soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
+                <TextView
+                    android:id="@+id/questText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="1- تا چه میزان ساعات برگزاری این نمایشگاه را مناسب می دانید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/quest1happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
+                <ImageButton
+                    android:id="@+id/quest1angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
 
-    </LinearLayout>
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest1soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest1happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL1">
+
+
+                <TextView
+                    android:id="@+id/questText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="2- تا چه میزان تاریخ برگزاری این نمایشگاه را مناسب می دانید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest2angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest2soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest2happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL2">
+
+
+                <TextView
+                    android:id="@+id/questText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="3- آیا از نحوه تبلیغات و اطلاع رسانی این نمایشگاه اطلاع دارید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest3angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest3soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest3happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="236dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL3">
+
+
+                <TextView
+                    android:id="@+id/questText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="4- بازدید از این نمایشگاه تا چه اندازه شما را ترغیب به شرکت در سال های آینده می نماید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest4angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest4soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest4happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL4">
+
+                <TextView
+                    android:id="@+id/questText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="5- جدید و بروز بودن تجهیزات، خدمات و صنایع ارائه شده در این نمایشگاه را چگونه ارزیابی می کنید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest5angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest5soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest5happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL5">
+
+                <TextView
+                    android:id="@+id/questText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="6- کیفیت برگزاری این نمایشگاه را در مقایسه با دیگر نمایشگاه های استان های بزرگ تا چه میزان مطلوب می دانید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest6angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest6soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest6happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL6">
+
+                <TextView
+                    android:id="@+id/questText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="7- میزان تبلیغات شهری این نمایشگاه را چگونه ارزیابی می کنید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest7angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest7soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest7happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL7">
+
+                <TextView
+                    android:id="@+id/questText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="8- سیستم های تهویه هوا، سرمایش و گرمایش سالن ها چگونه بودند؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest8angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest8soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest8happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL8">
+
+                <TextView
+                    android:id="@+id/questText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="9- نظافت داخل و بیرون سالن ها چگونه بود؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest9angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest9soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest9happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questL10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL9">
+
+                <TextView
+                    android:id="@+id/questText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="10- نظم عمومی نمایشگاه چگونه بود؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/quest10angry"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+
+                    app:srcCompat="@drawable/angry" />
+
+                <ImageButton
+                    android:id="@+id/quest10soso"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/soso" />
+
+                <ImageButton
+                    android:id="@+id/quest10happy"
+                    android:layout_width="@dimen/answer_icon_width"
+                    android:layout_height="@dimen/answer_icon_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/happy" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#01df14"
+                android:onClick="submitButtonHandler"
+                android:padding="8dp"
+                android:text=" ثبت نظرات "
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/questL10" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ScrollView>
 
     <LinearLayout
-        android:id="@+id/questL2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL1">
-
-
-        <TextView
-            android:id="@+id/questText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="2- تا چه میزان تاریخ برگزاری این نمایشگاه را مناسب می دانید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest2angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest2soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest2happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL2">
-
-
-        <TextView
-            android:id="@+id/questText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="3- آیا از نحوه تبلیغات و اطلاع رسانی این نمایشگاه اطلاع دارید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest3angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest3soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest3happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="236dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL3">
-
-
-        <TextView
-            android:id="@+id/questText4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="4- بازدید از این نمایشگاه تا چه اندازه شما را ترغیب به شرکت در سال های آینده می نماید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest4angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest4soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest4happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL4">
-
-
-        <TextView
-            android:id="@+id/questText5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="5- جدید و بروز بودن تجهیزات، خدمات و صنایع ارائه شده در این نمایشگاه را چگونه ارزیابی می کنید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest5angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest5soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest5happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL5">
-
-
-        <TextView
-            android:id="@+id/questText6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="6- کیفیت برگزاری این نمایشگاه را در مقایسه با دیگر نمایشگاه های استان های بزرگ تا چه میزان مطلوب می دانید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest6angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest6soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest6happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL6">
-
-
-        <TextView
-            android:id="@+id/questText7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="7- میزان تبلیغات شهری این نمایشگاه را چگونه ارزیابی می کنید؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest7angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest7soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest7happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL7">
-
-
-        <TextView
-            android:id="@+id/questText8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="8- سیستم های تهویه هوا، سرمایش و گرمایش سالن ها چگونه بودند؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest8angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest8soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest8happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL8">
-
-
-        <TextView
-            android:id="@+id/questText9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="9- نظافت داخل و بیرون سالن ها چگونه بود؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest9angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest9soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest9happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/questL10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questL9">
-
-
-        <TextView
-            android:id="@+id/questText10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.6"
-            android:background="#fff"
-            android:padding="5dp"
-            android:text="10- نظم عمومی نمایشگاه چگونه بود؟"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/quest10angry"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-
-            app:srcCompat="@drawable/angry" />
-
-        <ImageButton
-            android:id="@+id/quest10soso"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/soso" />
-
-        <ImageButton
-            android:id="@+id/quest10happy"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:layout_weight="0.1"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/happy" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text=" ثبت نظرات "
-        android:textColor="#fff"
-        android:textSize="25sp"
-        android:padding="8dp"
-        android:onClick="submitButtonHandler"
-        android:textStyle="bold"
-        android:background="#01df14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questL10"
-        />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@+id/submitButton"
-        />
-
-
-</android.support.constraint.ConstraintLayout>
-
-
-</ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/register"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/scrollView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:background="#c7ffe9"
+        android:orientation="horizontal"
         android:paddingBottom="8dp"
-        android:background="#e6e6e6"
         android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+
         >
 
 
@@ -682,33 +677,43 @@
             android:id="@+id/phoneRegister"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textColor="#000680"
-            android:textSize="20sp"
-            android:text="📞 ثبت شماره همراه "
             android:background="@null"
-            android:onClick="phoneRegisterHandler"/>
+            android:onClick="phoneRegisterHandler"
+            android:text=" ثبت شماره همراه "
+            android:textColor="#000680"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/proposRegister"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textColor="#049327"
-            android:textSize="20sp"
-            android:text="📋 ثبت نظر، پیشنهاد، انتقاد "
             android:background="@null"
-            android:onClick="proposRegisterHandler"/>
+            android:onClick="proposRegisterHandler"
+            android:text=" ثبت نظر، پیشنهاد، انتقاد "
+            android:textColor="#049327"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/isfahanfair"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:onClick="isfahanfairHandler"
+            android:text=" شرکت نمایشگاه های بین المللی استان اصفهان "
+            android:textColor="#049327"
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:background="@null"
-            android:layout_gravity="left"
-            android:layout_marginRight="50dp"
-            app:srcCompat="@drawable/isfahanfairlogo"
+            android:layout_gravity="end"
             android:layout_marginEnd="50dp"
-            android:onClick="isfahanfairHandler"/>
+            android:layout_marginRight="50dp"
+            android:background="@null"
+            android:onClick="isfahanfairHandler"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/isfahanfairlogo" />
 
 
     </LinearLayout>
