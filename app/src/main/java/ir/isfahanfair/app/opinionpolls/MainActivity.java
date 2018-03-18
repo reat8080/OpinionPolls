@@ -9,14 +9,17 @@ import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -33,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     int[] answers = new int[11];
     Dialog phoneRegisterDialog, proposRegisterDialog;
-    String phoneNumber, proposValue, poll_cat_name = "sitexVisitorOpinion";
+    String phoneNumber, proposValue , findout = "" , poll_cat_name = "نمایشگاه خودرو کلاسیک";
     SQLiteDatabase database;
+    Button underHS , highSchool , afterHS , bachelor , master , phd;
+    Drawable blue ;
+
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     @Override
@@ -54,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
         database = this.openOrCreateDatabase("opinion", MODE_PRIVATE, null);
         database.execSQL("CREATE TABLE IF NOT EXISTS results (poll_cat_name VARCHAR,ans1 int(1), ans2 int(1) ," +
-                " ans3 int(1),ans4 int(1),ans5 int(1),ans6 int(1),ans7 int(1),ans8 int(1),ans9 int(1),ans10 int(1),creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
+                " ans3 int(1),ans4 int(1),ans5 int(1),ans6 int(1),ans7 int(1),ans8 int(1),ans9 int(1)," +
+                "ans10 int(1),find_out VARCHAR,creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
         database.execSQL("CREATE TABLE IF NOT EXISTS phone_number (phone VARCHAR ,creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
         database.execSQL("CREATE TABLE IF NOT EXISTS propos (propos VARCHAR ,creat DATETIME DEFAULT CURRENT_TIMESTAMP)");
@@ -62,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(getApplicationContext())
                 .registerReceiver(mBroadcastReceiver,
                         new IntentFilter(MyService.MY_SERVICE_MESSAGE));
+
+        underHS = (Button) findViewById(R.id.underHSButton);
+        highSchool = (Button) findViewById(R.id.highSchoolButton);
+        afterHS = (Button) findViewById(R.id.afterHSButton);
+        bachelor = (Button) findViewById(R.id.bachelorButton);
+        master = (Button) findViewById(R.id.masterButton);
+        phd = (Button) findViewById(R.id.PHDButton);
+        blue = underHS.getBackground();
+        underHS.setBackground(null);
+        //blue.setColorFilter( 0x370077 , PorterDuff.Mode.MULTIPLY);
 
     }
 
@@ -155,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void submitButtonHandler(View view) {
-        if (answers[1] == 0) {
+        if (answers[1] == 0 || answers[2] == 0 || answers[3] == 0 || answers[4] == 0 || answers[5] == 0
+                || answers[6] == 0 || findout.length()==0 ) {
             Toast.makeText(this, "لطفا به سوالات پاسخ دهید.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "نظرات شما با موفقیت ثبت شد. سپاس بابت وقتتان.", Toast.LENGTH_SHORT).show();
@@ -222,6 +240,66 @@ public class MainActivity extends AppCompatActivity {
         isfahanfairDialog.show();
     }
 
+    public void underHS(View view) {
+        findout = underHS.getText().toString();
+        underHS.setBackground(blue); underHS.setTextColor(Color.WHITE);
+        highSchool.setBackground(null); highSchool.setTextColor(Color.BLACK);
+        afterHS.setBackground(null); afterHS.setTextColor(Color.BLACK);
+        bachelor.setBackground(null); bachelor.setTextColor(Color.BLACK);
+        master.setBackground(null); master.setTextColor(Color.BLACK);
+        phd.setBackground(null); phd.setTextColor(Color.BLACK);
+    }
+
+    public void highSchool(View view) {
+        findout = highSchool.getText().toString();
+        underHS.setBackground(null); underHS.setTextColor(Color.BLACK);
+        highSchool.setBackground(blue); highSchool.setTextColor(Color.WHITE);
+        afterHS.setBackground(null); afterHS.setTextColor(Color.BLACK);
+        bachelor.setBackground(null); bachelor.setTextColor(Color.BLACK);
+        master.setBackground(null); master.setTextColor(Color.BLACK);
+        phd.setBackground(null); phd.setTextColor(Color.BLACK);
+    }
+
+    public void afterHS(View view) {
+        findout = afterHS.getText().toString();
+        underHS.setBackground(null); underHS.setTextColor(Color.BLACK);
+        highSchool.setBackground(null); highSchool.setTextColor(Color.BLACK);
+        afterHS.setBackground(blue); afterHS.setTextColor(Color.WHITE);
+        bachelor.setBackground(null); bachelor.setTextColor(Color.BLACK);
+        master.setBackground(null); master.setTextColor(Color.BLACK);
+        phd.setBackground(null); phd.setTextColor(Color.BLACK);
+    }
+
+    public void bachelor(View view) {
+        findout = bachelor.getText().toString();
+        underHS.setBackground(null); underHS.setTextColor(Color.BLACK);
+        highSchool.setBackground(null); highSchool.setTextColor(Color.BLACK);
+        afterHS.setBackground(null); afterHS.setTextColor(Color.BLACK);
+        bachelor.setBackground(blue); bachelor.setTextColor(Color.WHITE);
+        master.setBackground(null); master.setTextColor(Color.BLACK);
+        phd.setBackground(null); phd.setTextColor(Color.BLACK);
+    }
+
+    public void master(View view) {
+        findout = master.getText().toString();
+        underHS.setBackground(null); underHS.setTextColor(Color.BLACK);
+        highSchool.setBackground(null); highSchool.setTextColor(Color.BLACK);
+        afterHS.setBackground(null); afterHS.setTextColor(Color.BLACK);
+        bachelor.setBackground(null); bachelor.setTextColor(Color.BLACK);
+        master.setBackground(blue); master.setTextColor(Color.WHITE);
+        phd.setBackground(null); phd.setTextColor(Color.BLACK);
+    }
+
+    public void PHD(View view) {
+        findout = phd.getText().toString();
+        underHS.setBackground(null); underHS.setTextColor(Color.BLACK);
+        highSchool.setBackground(null); highSchool.setTextColor(Color.BLACK);
+        afterHS.setBackground(null); afterHS.setTextColor(Color.BLACK);
+        bachelor.setBackground(null); bachelor.setTextColor(Color.BLACK);
+        master.setBackground(null); master.setTextColor(Color.BLACK);
+        phd.setBackground(blue); phd.setTextColor(Color.WHITE);
+    }
+
     private void storeInServer() {
 
         Cursor c = database.rawQuery("SELECT * FROM results", null);
@@ -237,6 +315,7 @@ public class MainActivity extends AppCompatActivity {
         int ansq8In = c.getColumnIndex("ans8");
         int ansq9In = c.getColumnIndex("ans9");
         int ansq10In = c.getColumnIndex("ans10");
+        int find_outIn = c.getColumnIndex("find_out");
 
         c.moveToFirst();
         int conter = c.getCount();
@@ -259,6 +338,8 @@ public class MainActivity extends AppCompatActivity {
                 requestPackage.setParam("ansq9", c.getString(ansq9In));
                 requestPackage.setParam("ansq10", c.getString(ansq10In));
                 requestPackage.setParam("creat", c.getString(creatIn));
+                requestPackage.setParam("findout", c.getString(find_outIn));
+                requestPackage.setParam("device", "tablet82");
                 Intent intent = new Intent(this, MyService.class);
                 intent.putExtra(MyService.REQUEST_PACKAGE, requestPackage);
                 startService(intent);
@@ -329,6 +410,8 @@ public class MainActivity extends AppCompatActivity {
         requestPackage.setParam("ansq8", String.valueOf(answers[8]));
         requestPackage.setParam("ansq9", String.valueOf(answers[9]));
         requestPackage.setParam("ansq10", String.valueOf(answers[10]));
+        requestPackage.setParam("findout", findout);
+        requestPackage.setParam("device", "tablet82");
         Intent intent = new Intent(this, MyService.class);
         intent.putExtra(MyService.REQUEST_PACKAGE, requestPackage);
         startService(intent);
@@ -348,6 +431,7 @@ public class MainActivity extends AppCompatActivity {
         requestValue.put("ans8", answers[8]);
         requestValue.put("ans9", answers[9]);
         requestValue.put("ans10", answers[10]);
+        requestValue.put("find_out", findout);
 
         database.insert("results", null, requestValue);
     }

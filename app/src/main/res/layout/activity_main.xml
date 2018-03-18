@@ -47,7 +47,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="1- تا چه میزان ساعات برگزاری این نمایشگاه را مناسب می دانید؟"
+                    android:text="1- تاریخ و ساعات برگزاری این نمایشگاه چطور بود؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -108,7 +108,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="2- تا چه میزان تاریخ برگزاری این نمایشگاه را مناسب می دانید؟"
+                    android:text="2- تبلیغات شهری و اطلاع رسانی این نمایشگاه چطور بود؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -169,7 +169,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="3- آیا از نحوه تبلیغات و اطلاع رسانی این نمایشگاه اطلاع دارید؟"
+                    android:text="3- به نظر شما برگزاری این نمایشگاه در سال آینده چطور است؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -231,7 +231,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="4- بازدید از این نمایشگاه تا چه اندازه شما را ترغیب به شرکت در سال های آینده می نماید؟"
+                    android:text="4- سیستم های تهویه هوا، سرمایش و گرمایش سالن ها چگونه بودند؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -291,7 +291,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="5- جدید و بروز بودن تجهیزات، خدمات و صنایع ارائه شده در این نمایشگاه را چگونه ارزیابی می کنید؟"
+                    android:text="5- نظافت داخل و بیرون سالن ها چگونه بود؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -351,7 +351,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="6- کیفیت برگزاری این نمایشگاه را در مقایسه با دیگر نمایشگاه های استان های بزرگ تا چه میزان مطلوب می دانید؟"
+                    android:text="6- نظم عمومی نمایشگاه چگونه بود؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -392,6 +392,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/questL7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -452,6 +453,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/questL8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -473,7 +475,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="8- سیستم های تهویه هوا، سرمایش و گرمایش سالن ها چگونه بودند؟"
+                    android:text="8- ؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -512,6 +514,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/questL9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -572,6 +575,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/questL10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -593,7 +597,7 @@
                     android:layout_weight="0.6"
                     android:background="@drawable/frame"
                     android:padding="10dp"
-                    android:text="10- نظم عمومی نمایشگاه چگونه بود؟"
+                    android:text="10- ؟"
                     android:textColor="#000"
                     android:textSize="@dimen/question_text_size"
                     android:textStyle="bold" />
@@ -631,11 +635,124 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/questL11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL10">
+
+                <TextView
+                    android:id="@+id/questText11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/frame"
+                    android:padding="10dp"
+                    android:text="7- از چه طریقی برای اولین بار از برگزاری نمایشگاه اطلاع پیدا نمودید؟"
+                    android:textColor="#000"
+                    android:textSize="@dimen/question_text_size"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questL11">
+
+                <Button
+                    android:id="@+id/underHSButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="پیامک"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:background="#370077"
+                    android:layout_weight="0.14"
+                    android:textColor="#000"
+                    android:onClick="underHS"/>
+
+                <Button
+                    android:id="@+id/highSchoolButton"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="فضای مجازی (تلگرام)"
+                    android:layout_weight="0.14"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:background="@null"
+                    android:textColor="#000"
+                    android:onClick="highSchool"/>
+
+                <Button
+                    android:id="@+id/afterHSButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="دوستان"
+                    android:layout_weight="0.14"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:background="@null"
+                    android:textColor="#000"
+                    android:onClick="afterHS"/>
+                <Button
+                    android:id="@+id/bachelorButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="تبلیغات شهری"
+                    android:textSize="25sp"
+                    android:layout_weight="0.14"
+                    android:textStyle="bold"
+                    android:background="@null"
+                    android:textColor="#000"
+                    android:onClick="bachelor"/>
+                <Button
+                    android:id="@+id/masterButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="جراید و نشریات"
+                    android:textSize="25sp"
+                    android:layout_weight="0.14"
+                    android:textStyle="bold"
+                    android:background="@null"
+                    android:textColor="#000"
+                    android:onClick="master"/>
+                <Button
+                    android:id="@+id/PHDButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="اینترنت (سایت، ایمیل و ...)"
+                    android:textSize="25sp"
+                    android:layout_weight="0.14"
+                    android:textStyle="bold"
+                    android:background="@null"
+                    android:textColor="#000"
+                    android:onClick="PHD"/>
+            </LinearLayout>
+
             <Button
                 android:id="@+id/submitButton"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:background="#01df14"
                 android:onClick="submitButtonHandler"
                 android:padding="8dp"
@@ -645,7 +762,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/questL10" />
+                app:layout_constraintTop_toBottomOf="@id/Linear3" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -663,7 +780,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:background="#c7ffe9"
+        android:background="#370077"
         android:orientation="horizontal"
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
@@ -680,7 +797,7 @@
             android:background="@null"
             android:onClick="phoneRegisterHandler"
             android:text=" ثبت شماره همراه "
-            android:textColor="#000680"
+            android:textColor="#fff"
             android:textSize="20sp" />
 
         <Button
@@ -690,17 +807,17 @@
             android:background="@null"
             android:onClick="proposRegisterHandler"
             android:text=" ثبت نظر، پیشنهاد، انتقاد "
-            android:textColor="#049327"
+            android:textColor="#fff"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/isfahanfair"
-            android:layout_width="500dp"
+            android:layout_width="450dp"
             android:layout_height="wrap_content"
             android:background="@null"
             android:onClick="isfahanfairHandler"
             android:text=" شرکت نمایشگاه های بین المللی استان اصفهان "
-            android:textColor="#049327"
+            android:textColor="#fff"
             android:textSize="20sp" />
 
         <ImageButton
